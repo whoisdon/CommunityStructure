@@ -53,7 +53,7 @@ $ npm install
 $ npm install -g
 ```
 
-## ⚙️ config
+## ⚙️ Configuração
 
 Utilizando shell para criação e manipulação de variáveis de ambiente:
 ```shell
@@ -65,6 +65,13 @@ Dentro do arquivo `.env` iremos armazenar algumas variáveis:
 TOKEN=
 MONGODB_URL=
 APIKEY_FIREBASE=
+```
+
+## ✰ Iniciar Projeto
+
+Você pode dar início ao projeto usando o nodemon, garantindo assim uma atualização em tempo real dos seus avanços.
+```bash
+npm run nodemon
 ```
 
 ## 📦 CLI
