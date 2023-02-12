@@ -1,0 +1,44 @@
+{
+  "name": "Discord Structure",
+  "version": "1.0.0",
+  "description": "Organizational structure for using the discord.js framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
+  },
+  "bin": {
+    "beautify": "./src/Utils/CLI/beautify.js",
+    "eslintrc": "./src/Utils/CLI/eslintrc.js",
+    "prettierrc": "./src/Utils/CLI/prettierrc.js"
+  },
+  "keywords": [],
+  "author": [
+    "Juaum • 愛#4009",
+    "ঔৣ☬✞𝓓𝖔𝖓✞☬ঔৣ#0552"
+  ],
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^18.0.6",
+    "chalk": "^4.1.2",
+    "colors": "^1.4.0",
+    "discord.js": "^14.7.1",
+    "firebase": "^8.6.4",
+    "glob": "^8.1.0",
+    "js-beautify": "^1.14.7",
+    "moment": "^2.29.4",
+    "mongoose": "^6.9.1",
+    "node-fetch": "^3.2.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.12",
+    "@babel/eslint-parser": "^7.19.1",
+    "eslint": "^8.20.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-n": "^15.6.1",
+    "inquirer": "^8.2.5",
+    "nodemon": "^2.0.20",
+    "prettier": "2.8.4",
+    "shelljs": "^0.8.5"
+  }
+}
