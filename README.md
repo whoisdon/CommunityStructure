@@ -17,7 +17,6 @@
   <a href="https://github.com/whoisdon/APIExpress/issues">
     <img alt="Repository issues" src="https://img.shields.io/github/issues/whoisdon/CommunityStructure">
   </a>
-  <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
 </p>
 
 
@@ -54,7 +53,7 @@ $ npm install
 $ npm install -g
 ```
 
-## ⚙️ Configuração
+## ⚙️ config
 
 Utilizando shell para criação e manipulação de variáveis de ambiente:
 ```shell
@@ -83,7 +82,7 @@ Alguns comandos CLI foram pré definidos para ajudar e auxiliar na estilização
 
 ## 📝 License
 
-Este projeto está sob a licença MIT. Consulte o [LICENSE](LICENSE) para obter detalhes.
+Este projeto está sob a licença Apache. Consulte o [LICENSE](LICENSE) para obter detalhes.
 
 ---
 
