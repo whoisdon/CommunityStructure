@@ -69,6 +69,10 @@ APIKEY_FIREBASE=
 
 ## ✰ Iniciar Projeto
 
+Você pode dar início ao projeto com facilidade, utilizando diretamente o comando:
+```
+node .
+```
 Você pode dar início ao projeto usando o nodemon, garantindo assim uma atualização em tempo real dos seus avanços.
 ```bash
 npm run nodemon
