@@ -1,5 +1,5 @@
 {
-  "name": "Discord Structure",
+  "name": "CommunityStructure",
   "version": "1.0.0",
   "description": "Organizational structure for using the discord.js framework",
   "main": "index.js",
