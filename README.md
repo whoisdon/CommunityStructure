@@ -64,7 +64,6 @@ Dentro do arquivo `.env` iremos armazenar algumas variáveis:
 ```
 TOKEN=
 MONGODB_URL=
-APIKEY_FIREBASE=
 ```
 
 ## ✰ Iniciar Projeto
