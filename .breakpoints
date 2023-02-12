@@ -1,0 +1,20 @@
+{
+  "files": {
+    "src/Events/Client/ready.js": [
+      {
+        "id": "02824956-58f8-45ca-90e7-703922376f1b",
+        "line": 1,
+        "version": 3,
+        "index": 0
+      }
+    ],
+    "src/Utils/functions.js": [
+      {
+        "id": "39d63527-3e4a-469b-b62f-354416b6fe4b",
+        "line": 1,
+        "version": 1,
+        "index": 0
+      }
+    ]
+  }
+}

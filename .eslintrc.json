@@ -1,0 +1,57 @@
+{
+  "parser": "@babel/eslint-parser",
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": [ 
+    "eslint:recommended", 
+    "prettier" 
+  ],
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "classes": true
+    }
+  },
+  "plugins": ["n"],
+  "rules": {
+    "class-methods-use-this": "off",
+    "no-undef": "off",
+    "n/shebang": "error",
+    "unicode-bom": ["error", "never"],
+    "indent": ["error", 4],
+    "linebreak-style": ["error", "windows"],
+    "quotes": ["error", "single"],
+    "semi": ["error", "always"],
+    "require-await": ["error"],
+    "no-lone-blocks": ["error"],
+    "block-spacing": ["error", "always"],
+    "eol-last": ["error", "always"],
+    "brace-style": ["error", "stroustrup"],
+    "prefer-const": [
+      "error",
+      {
+        "destructuring": "any",
+        "ignoreReadBeforeAssign": false
+      }
+    ],
+    "object-curly-spacing": [
+      "error",
+      "always",
+      {
+        "arraysInObjects": true
+      }
+    ],
+    "comma-spacing": [
+      "error",
+      {
+        "before": false,
+        "after": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+node_modules/
+.replit
+replit.nix
+.upm/
+.config/
+.cache/
+package.json
+package-lock.json
+.eslintrc.json
+.prettierrc.json
