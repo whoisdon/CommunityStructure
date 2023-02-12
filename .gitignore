@@ -4,3 +4,4 @@ replit.nix
 .upm/
 .config/
 .cache/
+.package-lock.json
