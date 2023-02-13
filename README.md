@@ -74,7 +74,7 @@ node .
 ```
 Você pode dar início ao projeto usando o nodemon, garantindo assim uma atualização em tempo real dos seus avanços.
 ```bash
-npm run nodemon
+npm run dev
 ```
 
 ## 📦 CLI
