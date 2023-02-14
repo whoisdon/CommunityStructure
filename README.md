@@ -92,7 +92,7 @@ Alguns comandos CLI foram pré definidos para ajudar e auxiliar na estilização
 
 ## 🏗️ Estrtura
 <details>
-  <summary>Implementação de um exemplo de comandos slash (/) no Discord, utilizando a base padrão do repositório.</summary>
+  <summary>Implementação de um exemplo de comandos slash (/) no Discord, usando a base padrão do repositório.</summary>
 
 ```js
 const Commands = require('../../Handlers/commands');
