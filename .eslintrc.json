@@ -17,8 +17,12 @@
       "classes": true
     }
   },
-  "plugins": ["n"],
+  "plugins": ["n", "node"],
   "rules": {
+    "node/no-unsupported-features/es-syntax": "off",
+    "node/no-missing-import": "error",
+    "node/no-extraneous-import": "error",
+    "node/no-unpublished-require": "error",
     "class-methods-use-this": "off",
     "no-undef": "off",
     "n/shebang": "error",
