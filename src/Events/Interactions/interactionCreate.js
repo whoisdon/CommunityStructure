@@ -27,6 +27,8 @@ module.exports = class extends Events {
       });
 
     if (command.permissions || !command.permissions) {
+      if (!interaction.guild && command.permissions) throw new Error("[PERMISSIONS_COMMAND]: Cannot use 'permissions' in dm interactions")
+      
       if (!interaction.member.permissions.has(command.permissions)) {
         return interaction.editReply({ content: 'Você não tem perm' });
       } else if (!interaction.guild.members.me.permissions.has(command.permissions)) {
