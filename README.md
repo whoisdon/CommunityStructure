@@ -146,4 +146,4 @@ Discord Don: [Entre em contato comigo!](https://discord.com/users/82867727465958
 Github Don: [github.com/whoisdon](https://github.com/whoisdon) &nbsp;
 
 Discord Juaum: [Entre em contato com Juaum!](https://discord.com/users/518207099302576160)
-GitHub Juaum: [github.com/joaolumertz](https://github.com/joaolumertz) &nbsp;
+Github Juaum: [github.com/joaolumertz](https://github.com/joaolumertz) &nbsp;
