@@ -140,5 +140,10 @@ Este projeto está sob a licença Apache. Consulte o [LICENSE](LICENSE) para obt
 
 ---
 
-Feito por ঔৣ☬✞𝓓𝖔𝖓✞☬ঔৣ#0552 :wave: [Entre em contato comigo!](https://discord.com/users/828677274659586068)
-GitHub: [github.com/whoisdon](https://github.com/whoisdon) &nbsp;
+Feito por ঔৣ☬✞𝓓𝖔𝖓✞☬ঔৣ#0552 e Juaum • 愛#4009 :wave: 
+
+Discord Don: [Entre em contato comigo!](https://discord.com/users/828677274659586068)
+Github Don: [github.com/whoisdon](https://github.com/whoisdon) &nbsp;
+
+Discord Juaum: [Entre em contato com Juaum!](https://discord.com/users/518207099302576160)
+GitHub Juaum: [github.com/joaolumertz](https://github.com/joaolumertz) &nbsp;
