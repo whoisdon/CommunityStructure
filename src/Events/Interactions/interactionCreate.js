@@ -26,7 +26,6 @@ module.exports = class extends Events {
         ephemeral: true,
       });
 
-    if (command.permissions || !command.permissions) {
       if (!interaction.guild && command.permissions) throw new Error("[PERMISSIONS_COMMAND]: Cannot use 'permissions' in dm interactions")
       
       if (!interaction.member.permissions.has(command.permissions)) {
@@ -50,6 +49,5 @@ module.exports = class extends Events {
       setTimeout(async () => {
         await this.client.cooldown.delete(interaction.user.id);
       }, 5000);
-    }
   };
 };
