@@ -90,6 +90,50 @@ Alguns comandos CLI foram pré definidos para ajudar e auxiliar na estilização
 
 ###
 
+## 🏗️ Estrtura
+<details>
+  <summary>Implementação de um exemplo de comandos slash (/) no Discord, utilizando a base padrão do repositório.</summary>
+
+```js
+const Commands = require('../../Handlers/commands');
+
+module.exports = class extends Commands {
+	constructor(client) {
+	  super(client, {
+            name: 'name',
+            description: 'description',
+ });
+}
+
+run = (interaction) => {
+
+ }
+}
+```
+</details>
+<details>
+  <summary>Exemplo de implementação de comandos slash (/) no Discord, usando a classe SlashCommandBuilder como base.</summary>
+
+```js
+const Commands = require('../../Handlers/commands');
+const { SlashCommandBuilder } = require('discord.js')
+
+module.exports = class extends Commands {
+	constructor(client) {
+	  super(client, {
+	    data: new SlashCommandBuilder()
+            .setName('nome')
+            .setDescription('descrição'),
+ });
+}
+
+run = (interaction) => {
+
+ }
+}
+```
+</details>
+
 ## 📝 License
 
 Este projeto está sob a licença Apache. Consulte o [LICENSE](LICENSE) para obter detalhes.
