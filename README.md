@@ -105,7 +105,7 @@ module.exports = class extends Commands {
  });
 }
 
-run = (interaction) => {
+run(interaction) {
 
  }
 }
@@ -127,7 +127,7 @@ module.exports = class extends Commands {
  });
 }
 
-run = (interaction) => {
+run(interaction) {
 
  }
 }
