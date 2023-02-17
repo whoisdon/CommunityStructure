@@ -1,6 +1,8 @@
 import { readdirSync } from 'fs';
 import { join } from 'path';
 import { Client } from 'discord.js';
+import { connect, set } from 'mongoose';
+import Models from '../Database/Models.js';
 const functions = import('../Utils/functions.js');
 
 export default class extends Client {
@@ -64,30 +66,27 @@ export default class extends Client {
       }
     }
   }
-    
-import { connect, set } from 'mongoose';
-import Models from '../Database/Models';
 
-set('strictQuery', true);
+    async connectToDatabase() {
+    try {
+        set('strictQuery', true);
 
-async function connectToDatabase() {
-  try {
-    console.log('Conectando com a database...');
-    const connection = await connect(process.env.MONGODB_URL, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
+        console.log('Conectando com a database...');
+        const connection = await connect(process.env.MONGODB_URL, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        });
 
-    const db = {
-      connection,
-      ...Models,
-    };
+        const db = {
+        connection,
+        ...Models,
+        };
 
-    console.log('Database carregada com sucesso');
-    return db;
-  } catch (error) {
-    console.error(`Ocorreu um erro ao tentar conectar com a database\n${error}`);
-    return null;
-  }
-}
+        console.log('Database carregada com sucesso');
+        return db;
+    } catch (error) {
+        console.error(`Ocorreu um erro ao tentar conectar com a database\n${error}`);
+        return null;
+    }
+  }  
 };
