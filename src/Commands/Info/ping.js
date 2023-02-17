@@ -1,15 +1,15 @@
-const Commands = require('../../Handlers/commands');
+import Commands from '../../Handlers/commands.js';
 
-module.exports = class extends Commands {
+export default class extends Commands {
   constructor(client) {
     super(client, {
       name: 'ping',
       description: 'Veja o ping do bot',
       defer: false,
-      onlyDevs: false,
+      onlyDevs: false
     });
   }
-  run(interaction) {
+  run = (interaction) => {
     interaction
       .editReply({
         content: 'Calculando sa bosta',
