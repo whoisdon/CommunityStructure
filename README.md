@@ -82,9 +82,9 @@ npm run dev
   <summary>Exemplo de implementação de comandos slash (/) no Discord, usando a base padrão do repositório.</summary>
 
 ```js
-const Commands = require('../../Handlers/commands');
+import Commands from '../../Handlers/commands.js';
 
-module.exports = class extends Commands {
+export default class extends Commands {
 	constructor(client) {
 	  super(client, {
             name: 'name',
@@ -102,10 +102,10 @@ run(interaction) {
   <summary>Exemplo de implementação de comandos slash (/) no Discord, usando a classe SlashCommandBuilder como base.</summary>
 
 ```js
-const Commands = require('../../Handlers/commands');
-const { SlashCommandBuilder } = require('discord.js')
+import Commands from '../../Handlers/commands.js';
+import { SlashCommandBuilder } from 'discord.js';
 
-module.exports = class extends Commands {
+export default class extends Commands {
 	constructor(client) {
 	  super(client, {
 	    data: new SlashCommandBuilder()
