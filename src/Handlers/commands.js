@@ -10,6 +10,11 @@ class Command {
     this.dm_permission = false;
     this.name_localizations = options.name_localizations;
   }
+  
+  toJSON() {
+    const { client, ...data } = this;
+    return data;
+  }
 }
 
 module.exports = Command;
