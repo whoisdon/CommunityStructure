@@ -1,8 +1,9 @@
-const Client = require('./Handlers/client');
+import Client from './Handlers/client.js';
 
-require('dotenv').config()
+import dotenv from 'dotenv'
+dotenv.config()
 
-const options = require('./Config/options');
+import options from './Config/options.js';
 const client = new Client(options);
 
 client.login(process.env.TOKEN);
