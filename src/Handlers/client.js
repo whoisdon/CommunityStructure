@@ -1,18 +1,23 @@
-const fs = require('fs');
-const utils = { functions: require('../Utils/functions') };
-const { join } = require('path');
-const { Client } = require('discord.js');
+import { readdirSync } from 'fs';
+import { join } from 'path';
+import { Client } from 'discord.js';
+const functions = import('../Utils/functions.js');
 
-module.exports = class extends Client {
-  constructor(options) {
+export default class extends Client {
+    constructor(options) {
     super(options);
 
     this.commandSlash = [];
+    this.loadUtils();
     this.loadCommands();
     this.loadEvents();
+    this.utils = functions;
     this.cooldown = new Set();
-    this.moment = require('moment');
-    this.utils = utils.functions;
+    this.moment = import('moment');
+  }
+
+  async loadUtils() {
+    this.utils = await functions;
   }
 
   registerCommands() {
@@ -27,63 +32,36 @@ module.exports = class extends Client {
       });
   }
 
-  loadCommands(path = 'src/Commands') {
-    const categories = fs.readdirSync(path);
+  async loadCommands(path = 'src/Commands') {
+    const categories = readdirSync(path);
     for (const category of categories) {
-      const commands = fs.readdirSync(`${path}/${category}`);
+      const commands = readdirSync(`${path}/${category}`);
 
       for (const command of commands) {
-        const commandClass = require(join(process.cwd(), `${path}/${category}/${command}`));
-        const cmd = new commandClass(this);
-
+        const commandFile = join(process.cwd(), `${path}/${category}/${command}`);
+        const { default: CommandClass } = await import(commandFile);
+        const cmd = new CommandClass(this);
+        
         this.commandSlash.push(cmd);
       }
     }
   }
 
-  loadEvents(path = 'src/Events') {
-    const eventsFolders = fs.readdirSync(path);
+  async loadEvents(path = 'src/Events') {
+    const eventsFolders = readdirSync(path);
     for (const folders of eventsFolders) {
-      const eventsFiles = fs.readdirSync(`${path}/${folders}`);
+      const eventsFiles = readdirSync(`${path}/${folders}`);
       for (const files of eventsFiles) {
         if (!files.endsWith('.js')) return;
-        const eventClass = require(join(process.cwd(), `${path}/${folders}/${files}`));
-
+        const eventFile = join(process.cwd(), `${path}/${folders}/${files}`);
+        const { default: eventClass } = await import(eventFile);
         const evnt = new eventClass(this);
         if (!evnt.once) {
-          this.on(evnt.name, evnt.run);
+           this.on(evnt.name, evnt.run);
         } else {
-          this.once(evnt.name, evnt.run);
+           this.once(evnt.name, evnt.run);
         }
       }
-    }
-  }
-
-  async connectToDatabase() {
-    try {
-      const { connect } = require('mongoose');
-      const mongoose = require('mongoose');
-      const Models = require('../Database/Models');
-
-      mongoose.set('strictQuery', true);
-
-      await this.utils.logger('Conectando com a database...', 'mongoose');
-      const connection = connect(process.env.MONGODB_URL, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-      });
-
-      this.db = {
-        connection,
-        ...Models,
-      };
-
-      await this.utils.logger('Database carregada com sucesso', 'mongoose');
-    } catch (error) {
-      await this.utils.logger(
-        'Ocorreu um erro ao tentar conectar com a database\n' + error,
-        'mongoose'
-      );
     }
   }
 };
