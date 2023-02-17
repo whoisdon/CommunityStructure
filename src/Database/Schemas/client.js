@@ -1,5 +1,6 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+import mongoose from 'mongoose';
+
+const { Schema } = mongoose;
 
 const clientSchema = new Schema({
   _cId: {
@@ -12,4 +13,5 @@ const clientSchema = new Schema({
 });
 
 const Client = mongoose.model('Client', clientSchema);
-module.exports = Client;
+
+export default Client;
