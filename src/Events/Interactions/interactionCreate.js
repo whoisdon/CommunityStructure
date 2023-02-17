@@ -1,10 +1,10 @@
-const Events = require('../../Handlers/events');
-const { developers } = require('../../Config/developers.json');
+import Events from '../../Handlers/events.js';
+import { readFile } from 'fs/promises';
+import moment from 'moment';
+import 'moment/locale/pt-br.js';
+moment.locale('pt-br');
 
-const moment = require('moment');
-moment.locale('pt-BR');
-
-module.exports = class extends Events {
+export default class extends Events {
   constructor(client) {
     super(client, {
       name: 'interactionCreate',
@@ -19,6 +19,7 @@ module.exports = class extends Events {
 
     const commandName = interaction.commandName;
     const command = this.client.commandSlash.find((c) => c.name === commandName);
+    const { developers } = JSON.parse(await readFile(`${process.cwd()}/src/Config/developers.json`, 'utf8'));
 
     if (command.onlyDevs && !developers.includes(interaction.user.id))
       return interaction.editReply({
@@ -26,8 +27,7 @@ module.exports = class extends Events {
         ephemeral: true,
       });
 
-      if (!interaction.guild && command.permissions) throw new Error("[PERMISSIONS_COMMAND]: Cannot use 'permissions' in dm interactions")
-      
+    if (command.permissions || !command.permissions) {
       if (!interaction.member.permissions.has(command.permissions)) {
         return interaction.editReply({ content: 'Você não tem perm' });
       } else if (!interaction.guild.members.me.permissions.has(command.permissions)) {
@@ -49,5 +49,6 @@ module.exports = class extends Events {
       setTimeout(async () => {
         await this.client.cooldown.delete(interaction.user.id);
       }, 5000);
+    }
   };
 };
