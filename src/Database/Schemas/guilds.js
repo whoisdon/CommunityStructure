@@ -1,5 +1,6 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+import mongoose from 'mongoose';
+
+const { Schema } = mongoose;
 
 const guildSchema = new Schema({
   _gId: {
@@ -8,4 +9,5 @@ const guildSchema = new Schema({
 });
 
 const Guild = mongoose.model('Guilds', guildSchema);
-module.exports = Guild;
+
+export default Guild;
