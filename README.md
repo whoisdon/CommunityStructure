@@ -77,19 +77,6 @@ Você pode dar início ao projeto usando o nodemon, garantindo assim uma atualiz
 npm run dev
 ```
 
-## 📦 CLI
-
-Alguns comandos CLI foram pré definidos para ajudar e auxiliar na estilização do código.
-### CLI pré definidos:
-
-| Command             |  Result              |
-| ------------------- | -------------------- |
-| `$ beautify`        | **padroniza o código fonte, tornando-o mais legível e fácil de manter.**                   |
-| `$ prettierrc`      | **formatação de código, para padronizar e aprimorar a aparência do seu código.**           |
-| `$ eslintrc`        | **verifica e corrigi problemas de padrão e estilo no seu código de maneira automatizada.** |
-
-###
-
 ## 🏗️ Estrutura
 <details>
   <summary>Exemplo de implementação de comandos slash (/) no Discord, usando a base padrão do repositório.</summary>
