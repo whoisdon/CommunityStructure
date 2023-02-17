@@ -1,4 +1,4 @@
-const { GatewayIntentBits, Partials } = require('discord.js');
+import { GatewayIntentBits, Partials } from 'discord.js';
 
 const options = {
   intents: [
@@ -28,4 +28,4 @@ const options = {
   ],
 };
 
-module.exports = options;
+export default options;
