@@ -9,7 +9,7 @@ export default class extends Commands {
       onlyDevs: false
     });
   }
-  run(interaction) => {
+  run(interaction) {
     interaction
       .editReply({
         content: 'Calculando sa bosta',
