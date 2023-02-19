@@ -24,5 +24,5 @@ module.exports = class extends Commands {
           content: textPing,
         });
       });
-  };
-};
+  }
+}
