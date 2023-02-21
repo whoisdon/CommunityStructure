@@ -6,7 +6,7 @@ class Command {
     this.options = options.options || options.data?.options;
     this.permissions = options.permissions;
     this.onlyDevs = options.onlyDevs;
-    this.defer = options.defer || true;
+    this.defer = options.defer || false;
     this.dm_permission = false;
     this.name_localizations = options.name_localizations;
   }
