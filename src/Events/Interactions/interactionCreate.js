@@ -1,9 +1,6 @@
 const Events = require('../../Handlers/events');
 const { developers } = require('../../Config/developers.json');
 
-const moment = require('moment');
-moment.locale('pt-BR');
-
 module.exports = class extends Events {
   constructor(client) {
     super(client, {
