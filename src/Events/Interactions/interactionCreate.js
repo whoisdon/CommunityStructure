@@ -11,7 +11,10 @@ module.exports = class extends Events {
     });
   }
   run = async (interaction) => {
-    const replyInteraction = await interaction.deferReply();
+    
+    if (!interaction.isChatInputCommand()) return;
+    
+    let  replyInteraction = await interaction.deferReply();
     if (!replyInteraction)
       return interaction.editReply({
         content: 'Ocorreu um erro ao executar este comando...',
