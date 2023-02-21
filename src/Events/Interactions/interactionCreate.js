@@ -16,7 +16,6 @@ export default class extends Events {
 
     const commandName = interaction.commandName;
     const command = this.client.commandSlash.find((c) => c.name === commandName);
-    command.defer ? await interaction.deferReply() : false;
     
     const { developers } = JSON.parse(await readFile(`${process.cwd()}/src/Config/developers.json`, 'utf8'));
 
@@ -42,6 +41,7 @@ export default class extends Events {
           ephemeral: true,
         });
       }
+      command.defer ? await interaction.deferReply() : false;
       else command.run(interaction);
     } else {
       return interaction.reply({
