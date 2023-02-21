@@ -16,7 +16,6 @@ module.exports = class extends Events {
 
     const commandName = interaction.commandName;
     const command = this.client.commandSlash.find((c) => c.name === commandName);
-    command.defer ? await interaction.deferReply() : false;
 
     if (command.onlyDevs && !developers.includes(interaction.user.id))
       return interaction.editReply({
@@ -42,7 +41,8 @@ module.exports = class extends Events {
             ephemeral: true,
           });
         }
-        else command.run(interaction);
+        command.defer ? await interaction.deferReply() : false;
+        command.run(interaction);
       } else {
         return interaction.reply({
           content: 'Você está em cooldown, aguarde 5 segundos para usar os comandos novamente.',
