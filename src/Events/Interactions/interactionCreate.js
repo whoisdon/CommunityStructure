@@ -22,6 +22,7 @@ module.exports = class extends Events {
 
     const commandName = interaction.commandName;
     const command = this.client.commandSlash.find((c) => c.name === commandName);
+    command.defer ? await interaction.deferReply() : false;
 
     if (command.onlyDevs && !developers.includes(interaction.user.id))
       return interaction.editReply({
