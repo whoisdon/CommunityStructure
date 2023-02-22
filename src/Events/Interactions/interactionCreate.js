@@ -39,7 +39,7 @@ export default class extends Events {
         });
       }
       command.defer ? await interaction.deferReply() : false;
-      else command.run(interaction);
+      command.run(interaction);
     } else {
       return interaction.reply({
         content: 'Você está em cooldown, aguarde 5 segundos para usar os comandos novamente.',
