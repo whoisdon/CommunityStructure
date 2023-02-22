@@ -5,7 +5,7 @@ export default class extends Commands {
     super(client, {
       name: 'ping',
       description: 'Veja o ping do bot',
-      defer: false,
+      defer: true,
       onlyDevs: false
     });
   }
