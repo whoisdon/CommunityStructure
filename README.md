@@ -100,8 +100,8 @@ const Commands = require('../../Handlers/commands');
 module.exports = class extends Commands {
 	constructor(client) {
 	  super(client, {
-            name: 'name',
-            description: 'description',
+            name: 'nome',
+            description: 'descrição',
  });
 }
 
