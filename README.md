@@ -83,8 +83,8 @@ import Commands from '../../Handlers/commands.js';
 export default class extends Commands {
 	constructor(client) {
 	  super(client, {
-            name: 'name',
-            description: 'description',
+            name: 'nome',
+            description: 'descrição',
  });
 }
 
