@@ -7,15 +7,15 @@ const functions = import('../Utils/functions.js');
 
 export default class extends Client {
     constructor(options) {
-    super(options);
+        super(options);
 
-    this.commandSlash = [];
-    this.loadUtils();
-    this.loadCommands();
-    this.loadEvents();
-    this.utils = functions;
-    this.cooldown = new Set();
-    this.moment = import('moment');
+        this.commandSlash = [];
+        this.loadUtils();
+        this.loadCommands();
+        this.loadEvents();
+        this.utils = functions;
+        this.cooldown = new Set();
+        this.moment = import('moment');
   }
 
   async loadUtils() {
