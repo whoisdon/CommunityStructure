@@ -67,7 +67,7 @@ export default class extends Client {
     }
   }
 
-    async connectToDatabase() {
+  async connectToDatabase() {
     try {
         set('strictQuery', true);
 
