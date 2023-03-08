@@ -1,5 +1,5 @@
 import Events from '../../Handlers/events.js';
-import Json from "./src/Config/developers.json" assert { type: "json" }
+import Json from "../../Config/developers.json" assert { type: "json" }
 
 export default class extends Events {
   constructor(client) {
