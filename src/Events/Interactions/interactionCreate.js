@@ -36,7 +36,7 @@ module.exports = class extends Events {
           ephemeral: true,
         });
       }
-      command.defer ? await interaction.deferReply() : false;
+      if (command.defer) await interaction.deferReply();
       command.run(interaction);
     } else {
       return interaction.reply({
