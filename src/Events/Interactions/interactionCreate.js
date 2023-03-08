@@ -1,5 +1,5 @@
 import Events from '../../Handlers/events.js';
-import { readFile } from 'fs/promises';
+import Json from "./src/Config/developers.json" assert { type: "json" }
 
 export default class extends Events {
   constructor(client) {
@@ -13,10 +13,8 @@ export default class extends Events {
 
     const commandName = interaction.commandName;
     const command = this.client.commandSlash.find((c) => c.name === commandName);
-    
-    const { developers } = JSON.parse(await readFile(`${process.cwd()}/src/Config/developers.json`, 'utf8'));
 
-    if (command.onlyDevs && !developers.includes(interaction.user.id))
+    if (command.onlyDevs && !Json.developers.includes(interaction.user.id))
       return interaction.editReply({
         content: `${interaction.user} **|** este comando é privado apenas para desenvolvedores desta aplicação!`,
         ephemeral: true,
