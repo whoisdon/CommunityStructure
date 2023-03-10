@@ -38,7 +38,7 @@ Na sua linha de comando:
 
 ```bash
 # Clone esse repositório
-$ git clone https://github.com/whoisdon/CommunityStructure.git
+$ git clone -b ES-Modules https://github.com/whoisdon/CommunityStructure.git
 ```
 ```bash
 # Vá para o repositório Back-end
