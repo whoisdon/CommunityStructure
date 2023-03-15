@@ -1,3 +1,5 @@
+import { API } from 'darkcord';
+ 
 class Command {
   constructor(client, options) {
     this.client = client;
@@ -9,6 +11,7 @@ class Command {
     this.defer = options.defer || false;
     this.dm_permission = false;
     this.name_localizations = options.name_localizations;
+    this.type = options?.type || API.ApplicationCommandType.ChatInput
   }
   
   toJSON() {
@@ -17,4 +20,4 @@ class Command {
   }
 }
 
-module.exports = Command;
+export default Command;
