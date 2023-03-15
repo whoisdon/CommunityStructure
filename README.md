@@ -57,10 +57,6 @@ $ cd CommunityStructure
 # Instale as dependencias
 $ npm install
 ```
-```bash
-# Instale as dependencias globalmente  
-$ npm install -g
-```
 
 ## ⚙️ Configuração
 
