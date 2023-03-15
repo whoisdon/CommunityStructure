@@ -14,10 +14,7 @@
     "prettierrc": "./src/Utils/CLI/prettierrc.js"
   },
   "keywords": [],
-  "author": [
-    "Juaum • 愛#4009",
-    "ঔৣ☬✞𝓓𝖔𝖓✞☬ঔৣ#0552"
-  ],
+  "author": "ঔৣ☬✞𝓓𝖔𝖓✞☬ঔৣ#0552",
   "license": "ISC",
   "dependencies": {
     "chalk": "^4.1.2",
