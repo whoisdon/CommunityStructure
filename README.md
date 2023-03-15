@@ -19,16 +19,25 @@
   </a>
 </p>
 
-
 <p align="center">
   <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-como-usar">Como usar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-license">Licença</a>
 </p>
 
+<p align="center">
+   <img src="https://i.imgur.com/8eQ4xSd.png" width="746" alt="darkcord">
+</p>
+
+<p align="center">
+   <a href="https://discord.com/users/630493603575103519" target="_blank"><img src="https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white" target="_blank"></a>
+   <a href="https://discord.com/users/630493603575103519" target="_blank"><img src="https://img.shields.io/github/followers/JustAWaifuHunter?style=for-the-badge&logo=github&color=blue" target="_blank"></a>
+   <a href="https://darkcord.denkylabs.com" target="_blank"><img src="https://img.shields.io/badge/Darkcord-black?style=for-the-badge&logo=discord&logoColor=white" target="_blank"></a>
+</p>
+
 ## 📋 Projeto
 
-* 🔐 A estrutura do discord.js permite criar bots e interagir com o Discord, com objetos que representam servidores, canais, mensagens, entre outros. Há métodos e eventos disponíveis para manipular esses objetos e responder a ações do usuário. Conhecer bem a estrutura é importante para aproveitar ao máximo as capacidades do discord.js e criar soluções personalizadas. <br>
+* 🔐 A estrutura do DarkCord permite criar bots e interagir com o Discord, com objetos que representam servidores, canais, mensagens, entre outros. Há métodos e eventos disponíveis para manipular esses objetos e responder a ações do usuário. Conhecer bem a estrutura é importante para aproveitar ao máximo as capacidades do DarkCord e criar soluções personalizadas. <br>
 
 ## 💻 Como usar
 
@@ -38,7 +47,7 @@ Na sua linha de comando:
 
 ```bash
 # Clone esse repositório
-$ git clone https://github.com/whoisdon/CommunityStructure.git
+$ git clone -b DarkCord https://github.com/whoisdon/CommunityStructure.git
 ```
 ```bash
 # Vá para o repositório Back-end
@@ -77,73 +86,43 @@ Você pode dar início ao projeto usando o nodemon, garantindo assim uma atualiz
 npm run dev
 ```
 
-## 📦 CLI
-
-Alguns comandos CLI foram pré definidos para ajudar e auxiliar na estilização do código.
-### CLI pré definidos:
-
-| Command             |  Result              |
-| ------------------- | -------------------- |
-| `$ beautify`        | **padroniza o código fonte, tornando-o mais legível e fácil de manter.**                   |
-| `$ prettierrc`      | **formatação de código, para padronizar e aprimorar a aparência do seu código.**           |
-| `$ eslintrc`        | **verifica e corrigi problemas de padrão e estilo no seu código de maneira automatizada.** |
-
-###
-
 ## 🏗️ Estrutura
 <details>
   <summary>Exemplo de implementação de comandos slash (/) no Discord, usando a base padrão do repositório.</summary>
 
 ```js
-const Commands = require('../../Handlers/commands');
+import Commands from '../../Handlers/CommandsMap.js';
 
-module.exports = class extends Commands {
-	constructor(client) {
-	  super(client, {
-            name: 'nome',
-            description: 'descrição',
- });
-}
+export default class extends Commands {
+  constructor(client) {
+    super(client, {
+      name: 'ping',
+      description: 'Veja o ping do bot'
+    });
+  }
+   run(interaction) {
+     
+    const latency = performance.now();
+     
+    interaction
+      .editOriginalReply({
+      content: 'Calculando sa bosta'
+      })
+      .then(() => {
+       const textPing = `Latência da minha WS: \`${this.client.websocket.ping}ms\`\nLatência da Resposta: \`${
+          (performance.now() - latency) >> 0
+        }ms\``;
 
-run(interaction) {
+        interaction.editOriginalReply({
+          content: textPing
+        });
 
- }
-}
-```
-</details>
-<details>
-  <summary>Exemplo de implementação de comandos slash (/) no Discord, usando a classe SlashCommandBuilder como base.</summary>
-
-```js
-const Commands = require('../../Handlers/commands');
-const { SlashCommandBuilder } = require('discord.js')
-
-module.exports = class extends Commands {
-	constructor(client) {
-	  super(client, {
-	    data: new SlashCommandBuilder()
-            .setName('nome')
-            .setDescription('descrição'),
- });
-}
-
-run(interaction) {
-
- }
-}
+      });
+  };
+};
 ```
 </details>
 
 ## 📝 License
 
 Este projeto está sob a licença Apache. Consulte o [LICENSE](LICENSE) para obter detalhes.
-
----
-
-Feito por ঔৣ☬✞𝓓𝖔𝖓✞☬ঔৣ#0552 e Juaum • 愛#4009 :wave: 
-
-Discord Don: [Entre em contato comigo!](https://discord.com/users/828677274659586068)
-Github Don: [github.com/whoisdon](https://github.com/whoisdon) &nbsp;
-
-Discord Juaum: [Entre em contato com Juaum!](https://discord.com/users/518207099302576160)
-Github Juaum: [github.com/joaolumertz](https://github.com/joaolumertz) &nbsp;
