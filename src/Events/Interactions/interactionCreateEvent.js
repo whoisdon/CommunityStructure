@@ -1,7 +1,7 @@
-const Events = require('../../Handlers/events');
-const { developers } = require('../../Config/developers.json');
+import Events from '../../Handlers/EventsMap.js';
+import Json from "../../Config/Developers.json" assert { type: "json" }
 
-module.exports = class extends Events {
+export default class extends Events {
   constructor(client) {
     super(client, {
       name: 'interactionCreate',
@@ -9,13 +9,13 @@ module.exports = class extends Events {
   }
   run = async (interaction) => {
     
-    if (!interaction.isChatInputCommand()) return;
+    if (!interaction.isCommand()) return;
 
     const commandName = interaction.commandName;
     const command = this.client.commandSlash.find((c) => c.name === commandName);
 
-     if (command.onlyDevs && !developers.includes(interaction.user.id))
-      return interaction.editReply({
+    if (command.onlyDevs && !Json.developers.includes(interaction.user.id))
+      return interaction.editOriginalReply({
         content: `${interaction.user} **|** este comando é privado apenas para desenvolvedores desta aplicação!`,
         ephemeral: true,
       });
@@ -36,7 +36,7 @@ module.exports = class extends Events {
           ephemeral: true,
         });
       }
-      if (command.defer) await interaction.deferReply();
+      if (command.defer) await interaction.defer();
       command.run(interaction);
     } else {
       return interaction.reply({
