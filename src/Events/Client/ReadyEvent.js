@@ -1,6 +1,6 @@
-const Events = require('../../Handlers/events');
+import Events from '../../Handlers/EventsMap.js';
 
-module.exports = class extends Events {
+export default class extends Events {
   constructor(client) {
     super(client, {
       name: 'ready',
