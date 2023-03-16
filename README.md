@@ -31,7 +31,7 @@
 
 <p align="center">
    <a href="https://discord.com/users/630493603575103519" target="_blank"><img src="https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white" target="_blank"></a>
-   <a href="https://discord.com/users/630493603575103519" target="_blank"><img src="https://img.shields.io/github/followers/JustAWaifuHunter?style=for-the-badge&logo=github&color=blue" target="_blank"></a>
+   <a href="https://github.com/JustAWaifuHunter" target="_blank"><img src="https://img.shields.io/github/followers/JustAWaifuHunter?style=for-the-badge&logo=github&color=blue" target="_blank"></a>
    <a href="https://darkcord.denkylabs.com" target="_blank"><img src="https://img.shields.io/badge/Darkcord-black?style=for-the-badge&logo=discord&logoColor=white" target="_blank"></a>
 </p>
 
