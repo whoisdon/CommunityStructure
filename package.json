@@ -8,18 +8,13 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon index.js"
   },
-  "bin": {
-    "beautify": "./src/Utils/CLI/beautify.js",
-    "eslintrc": "./src/Utils/CLI/eslintrc.js",
-    "prettierrc": "./src/Utils/CLI/prettierrc.js"
-  },
   "keywords": [],
   "author": "ঔৣ☬✞𝓓𝖔𝖓✞☬ঔৣ#0552",
   "license": "ISC",
   "dependencies": {
     "chalk": "^4.1.2",
     "colors": "^1.4.0",
-    "darkcord": "1.2.1",
+    "darkcord": "1.2.3",
     "dotenv": "^16.0.3",
     "glob": "^8.1.0",
     "js-beautify": "^1.14.7",
