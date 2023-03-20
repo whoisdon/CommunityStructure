@@ -1,7 +1,7 @@
 {
   "name": "CommunityStructure",
   "version": "1.0.0",
-  "description": "Organizational structure for using the discord.js framework",
+  "description": "Organizational structure for using the DarkCord framework",
   "main": "index.js",
   "type": "module",
   "scripts": {
