@@ -140,7 +140,7 @@ Este projeto está sob a licença Apache. Consulte o [LICENSE](LICENSE) para obt
 
 ---
 
-Feito por ঔৣ☬✞𝓓𝖔𝖓✞☬ঔৣ#0552 e Juaum • 愛#4009 :wave: 
+Feito por Who Am I#0001 e Juaum • 愛#4009 :wave: 
 
 Discord Don: [Entre em contato comigo!](https://discord.com/users/828677274659586068)
 Github Don: [github.com/whoisdon](https://github.com/whoisdon) &nbsp;
