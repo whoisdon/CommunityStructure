@@ -1,7 +1,7 @@
 ![](https://i.imgur.com/itlNpH6.png)
 
 <h1 align="center"> 
-	✨ Kuruminha Source ✨
+	Kuruminha Source
 </h1>
 
 Ever wondered how to inject fun and joy into your Discord server? Look no further! Kuruminha is here to save your precious time, handling mundane tasks while you immerse yourself in a world of magical entertainment.
