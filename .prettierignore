@@ -1,8 +1,0 @@
-node_modules/
-.upm/
-.config/
-.cache/
-package.json
-package-lock.json
-.eslintrc.json
-.prettierrc.json
