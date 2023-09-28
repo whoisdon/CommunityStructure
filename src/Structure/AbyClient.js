@@ -89,7 +89,7 @@ export default class extends Client {
   
       for (const command of commands) {
         const commandFile = join(process.cwd(), `${path}/${category}/${command}`);
-        const { default: SlashCommands } = await import(commandFile);
+        const { default: SlashCommands } = await import('file://' + commandFile);
         const cmd = new SlashCommands(this);
 
         const isModified = this.cacheCommands(cmd);
@@ -109,7 +109,7 @@ export default class extends Client {
 
       for (const command of commands) {
         const commandFile = join(process.cwd(), `${path}/${category}/${command}`);
-        const { default: PrefixCommands } = await import(commandFile);
+        const { default: PrefixCommands } = await import('file://' + commandFile);
         const cmd = new PrefixCommands(this);
         
         this.PrefixCommandArray.push(cmd);
@@ -124,7 +124,7 @@ export default class extends Client {
       for (const files of eventsFiles) {
         if (!files.endsWith('.js')) return;
         const eventFile = join(process.cwd(), `${path}/${folders}/${files}`);
-        const { default: EventMap } = await import(eventFile);
+        const { default: EventMap } = await import('file://' + eventFile);
         const evnt = new EventMap(this);
         if (!evnt.once) {
            this.on(evnt.name, evnt.run);
