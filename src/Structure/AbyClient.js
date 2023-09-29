@@ -42,22 +42,22 @@ export default class extends Client {
     const commandsInLocalScope = this.SlashCommandArray.filter(command => command.guildCollection).map(command => Object.assign(command, command.data));
   
     const filterLocalCommands = commandsInLocalScope.filter(local => !existingCommands.some(cache => cache.name === local.name));
-    const booleanLocalCommands = this.cacheCommands(filterLocalCommands, false); 
+    const booleanLocalCommands = this.cacheCommands(filterLocalCommands, false);
   
     const filterGlobalCommands = globalCommands.filter(global => !existingCommands.some(cache => cache.name === global.name));
     const booleanGlobalCommands = this.cacheCommands(filterGlobalCommands, true);
   
-    if (!booleanLocalCommands && !booleanGlobalCommands) {
+    if (!(booleanLocalCommands || booleanGlobalCommands)) {
       this.log('Não há comandos para carregar. Nenhuma alteração foi efetuada!', 'cache');
       return;
     }
-
-    else if (booleanGlobalCommands) {
+  
+    if (booleanGlobalCommands) {
       await this.application.commands.set(globalCommands).catch((err) => this.log(err, 'error'));
       this.log('Os comandos (/) com scopo globais da aplicação foram carregados com sucesso!', 'client');
     }
-
-    else if (booleanLocalCommands) {
+  
+    if (booleanLocalCommands) {
       for (const guildID of commandsInLocalScope.flatMap(command => command.guildCollection)) {
         const commands = commandsInLocalScope.filter(
           cmd => cmd.guildCollection.includes(guildID)
@@ -73,9 +73,7 @@ export default class extends Client {
         this.log(`Os comandos (/) com scopo local da aplicação foram carregados com sucesso na guild: ${guild.name} (${guild.id})!`, 'client');
       }
     }
-  
-    this.log('Os comandos (/) com scopo globais da aplicação foram carregados com sucesso!', 'client');
-  }  
+  }
   
   async getSlashCommands(path = 'src/SlashCommands') {
     const categories = readdirSync(path);
