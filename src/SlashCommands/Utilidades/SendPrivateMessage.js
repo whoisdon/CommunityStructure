@@ -34,12 +34,12 @@ export default class extends SlashCommands {
         return;
     }
 
-    if (member.user?.bot) {
+    else if (member.user?.bot) {
         interaction.reply({ content: `${this.emoji.under} | Uh-oh! Parece que você está enviando mensagens codificadas para nossos amigos alienígenas! 👽🛸🤪`, ephemeral: true })
         return;
     }
 
-    if (interaction.member === member) {
+    else if (interaction.member === member) {
         interaction.reply({ content: `${this.emoji.under} **|** Oh, parece que você está tentando enviar uma mensagem secreta... para você mesmo! Você é seu próprio melhor amigo? 🙃📬😄`, ephemeral: true })
         return;
     }
@@ -59,6 +59,6 @@ export default class extends SlashCommands {
         })
         interaction.reply({ content: `✉️ ${this.emoji.rs} **|** A mensagem foi lançada com sucesso na direção de ${member}! Boa sorte no espaço das mensagens secretas! 🚀🪐`, ephemeral: true })
         return;
-	})
+    })
   }
 }
