@@ -22,6 +22,7 @@ export default class extends Client {
         (async () => {
             this.SlashCommandArray = [];
             this.PrefixCommandArray = [];
+            this.antiCrash();
             this.dockerShell();
             this.getPrefixCommands();
             this.getSlashCommands();
