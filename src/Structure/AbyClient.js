@@ -66,7 +66,8 @@ export default class extends Client {
   
         const guild = this.guilds.cache.get(guildID);
         if (!guild) {
-          this.log(`O servidor ${guild.name} (${guild.id}) está fora do cache do client`, 'error');
+          const verify = await this.guilds.fetch(guildID)
+          this.log(`O servidor ${verify.name} (${verify.id}) está fora do cache do client`, 'error');
           continue;
         }
   
