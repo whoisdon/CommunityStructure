@@ -13,6 +13,7 @@ const searchFile = './src/Utils/.cache/.commandsCache.json';
 import readline from 'readline';
 import { exec } from 'child_process';
 
+import chalk from 'chalk';
 import mysql from '../Database/SQL/MySQL.js';
 
 export default class extends Client {
