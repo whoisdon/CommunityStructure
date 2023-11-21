@@ -141,7 +141,7 @@ This project is licensed under the Apache License. Please refer to the  [LICENSE
 
 **🌟 Do you love this project as much as I do?**
 
-If the answer is "yes," then I have a special request for you! Imagine that each "star" in my repository is like a magical spark that brings my work to life. ✨
+If the answer is "yes", then I have a special request for you! Imagine that each "star" in my repository is like a magical spark that brings my work to life. ✨
 
 I want you to join my galaxy of stars and help me illuminate the code universe! It's as easy as a click, and you'll become part of my constellation of supporters.
 
