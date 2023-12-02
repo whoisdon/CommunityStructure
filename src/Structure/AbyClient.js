@@ -16,6 +16,9 @@ import { exec } from 'child_process';
 import chalk from 'chalk';
 import mysql from '../Database/SQL/MySQL.js';
 
+import '../Database/Cloud/Firebase.cjs';
+import firebase from 'firebase';
+
 export default class extends Client {
     constructor(options) {
         super(options);
@@ -23,16 +26,17 @@ export default class extends Client {
         (async () => {
             this.SlashCommandArray = [];
             this.PrefixCommandArray = [];
+            this.log = log;
+            this.emoji = emojis;
+            this.quickdb = db;
+            this.mysql = await mysql;
+            this.firebase = firebase.database();
             this.antiCrash();
             this.dockerShell();
             this.getPrefixCommands();
             this.getSlashCommands();
             this.getEvents();
             this.cooldown = new Set();
-            this.log = log;
-            this.emoji = emojis;
-            this.quickdb = db;
-            this.mysql = await mysql;
         })();
   }
 
