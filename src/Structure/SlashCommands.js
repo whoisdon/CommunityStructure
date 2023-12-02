@@ -15,10 +15,11 @@ class SlashCommands {
     this.log = this.client.log;
     this.quickdb = this.client.quickdb;
     this.mysql = this.client.mysql;
+    this.firebase = this.client.firebase;
   }
   
   toJSON() {
-    const { client, botPermissions, quickdb, mysql, ...data } = this;
+    const { client, botPermissions, quickdb, mysql, firebase ...data } = this;
     return data;
   }
 }
