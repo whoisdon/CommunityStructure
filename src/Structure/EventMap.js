@@ -7,6 +7,7 @@ class EventMap {
     this.quickdb = this.client.quickdb;
     this.emoji = this.client.emoji;
     this.mysql = this.client.mysql;
+    this.firebase = this.client.firebase;
   }
 }
 
