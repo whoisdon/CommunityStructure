@@ -16,6 +16,7 @@ class PrefixCommands {
     this.log = this.client.log;
     this.quickdb = this.client.quickdb;
     this.mysql = this.client.mysql;
+    this.firebase = this.client.firebase;
   }
 }
 
