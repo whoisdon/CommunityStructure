@@ -19,7 +19,7 @@ class SlashCommands {
   }
   
   toJSON() {
-    const { client, botPermissions, quickdb, mysql, firebase ...data } = this;
+    const { client, botPermissions, quickdb, mysql, firebase, ...data } = this;
     return data;
   }
 }
