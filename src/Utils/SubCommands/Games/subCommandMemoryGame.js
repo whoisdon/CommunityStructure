@@ -3,7 +3,7 @@ import { ActionRowBuilder, ButtonStyle, ButtonBuilder } from 'discord.js';
 const subCommandMemoryGame = async ({ interaction, emoji }) => {
     const dif = interaction.options.getString('dificuldade') || '_easy';
     var emojis = emoji.fruits;
- 	var lolInteraction = true;
+    var lolInteraction = true;
     var timer = true;
     let intervalId;
     
@@ -161,12 +161,12 @@ const subCommandMemoryGame = async ({ interaction, emoji }) => {
                     }, 1500);
                 }
                 firstButtonInteraction = null;
-         }
+           }
     
-         	await interaction.update({ components: buttonRows });
+          await interaction.update({ components: buttonRows });
 
-         	const allPairsMatched = buttonRows.every(row => row.components.every(button => button.data.style === ButtonStyle.Success));
-         	if (allPairsMatched) {
+           const allPairsMatched = buttonRows.every(row => row.components.every(button => button.data.style === ButtonStyle.Success));
+           if (allPairsMatched) {
                 clearInterval(intervalId);
                 timer = false;
                 
@@ -176,8 +176,8 @@ const subCommandMemoryGame = async ({ interaction, emoji }) => {
                 const segundos = ((timestamp % 60000) / 1000).toFixed(0);
                 const mens = minutos === 0 ? `${segundos}s` : `${minutos}min e ${segundos}s`
                 
-				await interaction.message.edit({ content: `Você é uma estrela brilhante! 💫 Todos os emojis combinados são seus ${emoji.rico}, e você venceu o jogo com estilo! Seu tempo para a vitória foi de apenas (\`${mens}\`)!`, components: [], ephemeral: true });
-         	}
+		await interaction.message.edit({ content: `Você é uma estrela brilhante! 💫 Todos os emojis combinados são seus ${emoji.rico}, e você venceu o jogo com estilo! Seu tempo para a vitória foi de apenas (\`${mens}\`)!`, components: [], ephemeral: true });
+           }
         });        
 
         collector.on('end', (_, reason) => {
