@@ -100,7 +100,7 @@ const subCommandMines = async ({ interaction, emoji }) => {
             diamondsDiscovered++;
 
             if (diamondsDiscovered === totalDiamonds) {
-                await interaction.message.edit({ content: `Você é uma estrela brilhante! Todos os diamantes são seus ${emoji.rico}, e você venceu o jogo com estilo!`, components: [] });
+                await interaction.editReply({ content: `Você é uma estrela brilhante! Todos os diamantes são seus ${emoji.rico}, e você venceu o jogo com estilo!`, components: [] });
                 collector.stop();
             }
         }
